@@ -12,7 +12,6 @@ public class Location {
         id = nextId;
         nextId++;
     }
-
     public Location(String value) {
         this();
         this.value = value;
