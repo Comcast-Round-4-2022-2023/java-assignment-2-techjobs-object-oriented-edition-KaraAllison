@@ -5,9 +5,8 @@ import java.util.Objects;
 public abstract class JobField {
     private  int id;
     private static int nextId = 1;
-
     private String value;
-
+// id is unique amongst all JobField types
     public JobField() {
         this.id = nextId;
         nextId++;
@@ -21,14 +20,6 @@ public abstract class JobField {
         return value;
     }
 
-//    @Override
-//    public boolean equals(Object o) {  // Two objects are equal if they have the same id.
-//        if (this == o) return true;
-//        if (!(o instanceof JobField)) return false;
-//        JobField jobField = (JobField) o;
-//        return getId() == jobField.getId();
-//    }
-
     @Override
     public int hashCode() {
         return Objects.hash(getId());
@@ -39,11 +30,9 @@ public abstract class JobField {
     public int getId() {
         return id;
     }
-
     public String getValue() {
         return value;
     }
-
     public void setValue(String value) {
         this.value = value;
     }
