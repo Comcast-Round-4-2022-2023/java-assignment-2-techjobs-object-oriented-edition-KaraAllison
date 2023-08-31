@@ -10,7 +10,7 @@ public abstract class JobField {
     public JobField() {
         this.id = nextId;
         nextId++;
-        this.value = "Data not available";
+        this.value = "";
     }
     public JobField(String value) {
         this();
