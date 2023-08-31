@@ -14,6 +14,11 @@ public class Job {
     public Job() {
         this.id =nextId;
         nextId++;
+        this.name = "Data not available";
+        this.employer = new Employer();
+        this.location = new Location();
+        this.positionType = new PositionType();
+        this.coreCompetency = new CoreCompetency();
     }
     public Job(String name, Employer employer, Location location, PositionType positionType,
                CoreCompetency coreCompetency) {
@@ -28,38 +33,13 @@ public class Job {
         String str = "";
         str = str.concat(System.lineSeparator());
         str = str.concat("ID: " + getId() + System.lineSeparator());
+        str = str.concat("Name: " + getName() + System.lineSeparator());
+        str = str.concat("Employer: " + getEmployer().toString() + System.lineSeparator());
+        str = str.concat("Location: " + getLocation().toString() + System.lineSeparator());
+        str = str.concat("Position Type: " + getPositionType().toString() + System.lineSeparator());
+        str = str.concat("Core Competency: " + getCoreCompetency().toString() + System.lineSeparator());
 
-        if (getName() == null || getName().isBlank()) {
-            str = str.concat("Name: Data not available" + System.lineSeparator());
-        } else {
-            str = str.concat("Name: " + getName() + System.lineSeparator());
-        }
-
-        if (getEmployer() == null || getEmployer().getValue().isBlank()) {
-            str = str.concat("Employer: Data not available" + System.lineSeparator());
-        } else {
-            str = str.concat("Employer: " + getEmployer().getValue() + System.lineSeparator());
-        }
-
-        if (getLocation() == null || getLocation().getValue().isBlank()) {
-            str = str.concat("Location: Data not available" + System.lineSeparator());
-        } else {
-            str = str.concat("Location: " + getLocation().getValue() + System.lineSeparator());
-        }
-
-        if (getPositionType() == null || getPositionType().getValue().isBlank()) {
-            str = str.concat("Position Type: Data not available" + System.lineSeparator());
-        } else {
-            str = str.concat("Position Type: " + getPositionType().getValue() + System.lineSeparator());
-        }
-
-        if (getCoreCompetency() == null || getCoreCompetency().getValue().isBlank()) {
-            str = str.concat("Core Competency: Data not available" + System.lineSeparator());
-        } else {
-            str = str.concat("Core Competency: " + getCoreCompetency().getValue() + System.lineSeparator());
-        }
         return str;
-
     }
     @Override
     public boolean equals(Object o) {
